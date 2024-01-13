@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import { IEmployee, exampleEmployeeList } from '../types/Employee.type'
 import './Home.style.css'
 
 const Home = () => {
+    const [employeeList, setEmployeeList] = useState(exampleEmployeeList as IEmployee[])
+
     return (
         <>
             <header>
