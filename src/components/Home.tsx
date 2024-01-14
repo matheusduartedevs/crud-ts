@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { IEmployee, exampleEmployeeList } from '../types/Employee.type'
-import './Home.style.css'
+import '../styles/Home.style.css'
+import EmployeeList from './EmployeeList'
 
 const Home = () => {
     const [employeeList, setEmployeeList] = useState(exampleEmployeeList as IEmployee[])
@@ -12,7 +13,8 @@ const Home = () => {
             </header>
 
             <section>
-                <div>Content</div>
+                <input type="button" value="Adicionar Funcionário" />
+                <EmployeeList list={employeeList} />
             </section>
         </>
     )
