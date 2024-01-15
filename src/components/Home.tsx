@@ -20,6 +20,13 @@ const Home = () => {
         setEmployeeList([...employeeList, data])
     }
 
+    const deleteEmployee = (data: IEmployee) => {
+        const index = employeeList.indexOf(data)
+        const tempList = [...employeeList]
+        tempList.splice(index, 1)
+        setEmployeeList(tempList)
+    }
+    
     return (
         <>
             <header>
@@ -35,7 +42,7 @@ const Home = () => {
                             onClick={handleAddEmployeeClick}
                             className='add-employee-btn'
                             />
-                        <EmployeeList list={employeeList} />
+                        <EmployeeList list={employeeList} handleDelete={deleteEmployee} />
                     </>
                 )}
 

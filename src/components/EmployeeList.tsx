@@ -3,10 +3,11 @@ import { IEmployee } from '../types/Employee.type'
 
 type Props = {
   list: IEmployee[]
+  handleDelete: (data: IEmployee) => void
 }
 
 const EmployeeList = (props: Props) => {
-  const { list } = props
+  const { list, handleDelete } = props
 
   return (
     <div>
@@ -29,7 +30,7 @@ const EmployeeList = (props: Props) => {
                   <div>
                     <input type="button" value="View" />
                     <input type="button" value="Edit" />
-                    <input type="button" value="Delete" />
+                    <input type="button" value="Delete" onClick={() => handleDelete(employee)} />
                   </div>
                 </td>
               </tr>
