@@ -18,10 +18,9 @@ const EmployeeList = (props: Props) => {
             <th>Actions</th>
           </tr>
           {list.map((employee) => {
-            console.log(employee)
             return (
               <tr key={employee.id}>
-                <td>${employee.firstName} ${employee.lastName}</td>
+                <td>{employee.firstName} {employee.lastName}</td>
                 <td>{employee.email}</td>
                 <td>
                   <div>
