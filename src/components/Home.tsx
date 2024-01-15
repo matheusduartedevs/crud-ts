@@ -16,6 +16,10 @@ const Home = () => {
         setShownPage(PageEnum.list)
     }
 
+    const addEmployee = (data: IEmployee) => {
+        setEmployeeList([...employeeList, data])
+    }
+
     return (
         <>
             <header>
@@ -30,7 +34,7 @@ const Home = () => {
                     </>
                 )}
 
-                {shownPage === PageEnum.add && <AddEmployee handleBackButton={showListPage} />}
+                {shownPage === PageEnum.add && <AddEmployee handleSubmit={addEmployee} handleBackButton={showListPage} />}
             </section>
         </>
     )
