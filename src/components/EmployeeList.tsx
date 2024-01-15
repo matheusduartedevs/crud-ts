@@ -6,12 +6,13 @@ import '../styles/EmployeeList.style.css'
 type Props = {
   list: IEmployee[]
   handleDelete: (data: IEmployee) => void
+  handleEdit: (data: IEmployee) => void
 }
 
 const EmployeeList = (props: Props) => {
   const [showModal, setShowModal] = useState(false)
   const [dataToShow, setDataToShow] = useState(null as IEmployee | null)
-  const { list, handleDelete } = props
+  const { list, handleDelete, handleEdit } = props
 
   const openModal = (data: IEmployee) => {
     setShowModal(true) 
@@ -40,7 +41,7 @@ const EmployeeList = (props: Props) => {
                 <td>
                   <div>
                     <input type="button" value="View" onClick={() => openModal(employee)} />
-                    <input type="button" value="Edit" />
+                    <input type="button" value="Edit" onClick={() => handleEdit(employee) } />
                     <input type="button" value="Delete" onClick={() => handleDelete(employee)} />
                   </div>
                 </td>
