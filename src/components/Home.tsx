@@ -29,7 +29,12 @@ const Home = () => {
             <section>
                 {shownPage === PageEnum.list && (
                     <>
-                        <input type="button" value="Adicionar Funcionário" onClick={handleAddEmployeeClick} />
+                        <input 
+                            type="button" 
+                            value="Adicionar Funcionário" 
+                            onClick={handleAddEmployeeClick}
+                            className='add-employee-btn'
+                            />
                         <EmployeeList list={employeeList} />
                     </>
                 )}

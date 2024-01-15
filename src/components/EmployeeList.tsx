@@ -10,6 +10,9 @@ const EmployeeList = (props: Props) => {
 
   return (
     <div>
+      <article>
+        <h3>Lista de Funcionários</h3>
+      </article>
       <table>
         <tbody>
           <tr>
